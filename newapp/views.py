@@ -8,6 +8,7 @@ from .models import Customer
 from .serializers import CustomerSerializer
 
 class CustomerList(APIView):
+    print("in view")
     def get(self,request):
         customer = Customer.objects.all()
         serializer = CustomerSerializer(customer,many=True)
