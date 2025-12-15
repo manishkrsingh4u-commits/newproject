@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from newapp.views import CustomerList
+from newapp.views import CustomerList, CustomerDetail
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('customer-view/',CustomerList.as_view(),name='customer-list'),
+    path('customer-view/<int:pk>/',CustomerDetail.as_view(),name='customer-detail'),
 ]
